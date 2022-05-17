@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super mario</title>
+    <style>
+        @font-face {
+    font-family: 'NeoDunggeunmo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            color: #fff;
+            
+    font-family: 'NeoDunggeunmo';
+        }
+        body{
+            width: 100%;
+            height: 900px;
+            background: rgb(125, 69, 13);
+            
+            
+        }
+        .sky{
+            width: 100%;
+            height: 700px;
+            background: rgb(89, 197, 255);
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .bottom{
+            height: 160px;
+            background-image: url(https://i.postimg.cc/63CJ9YJr/groundblock.png);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* deco */
+        
+        .bush1{
+            position: absolute;
+            top: 650px;
+            left: 1200px;
+            height: 50px;
+        }
+        .bush2{
+            position: absolute;
+            top: 650px;
+            left: 200px;
+            height: 50px;
+        }
+        .cloud{
+            position: absolute;
+            top: 100px;
+            height: 100px;
+            -webkit-animation: wind 50s both infinite linear reverse; 
+           animation: wind 50s both infinite linear reverse;
+        }
+        .mario{
+            position: absolute;
+            width: 71px;
+            height: 72px;
+            background: url('https://i.postimg.cc/c1My29cZ/mario.png') left center;    
+            top:630px;
+            left:0px;
+    
+            -webkit-animation: play 0.8s steps(4) infinite,
+                run 7s both infinite linear;
+    
+            animation: play .8s steps(4) infinite,
+                run 7s both infinite linear;
+                z-index: 1000;
+}
+            .castle{
+                position: absolute;
+                top: 325px;
+            z-index: 100;
+            right: 10%
+            }
+
+            .pipe{
+                width: 150px;
+                position: absolute;
+                top: 530px;
+                left: 700px;
+                
+            }
+            /* //deco */
+
+
+/* 블럭 */
+
+.block{position: absolute;
+    left: -12%;
+    top: 70px;
+}
+.brick{
+    width: 70px;
+    position: absolute;
+    top: 300px;
+    left: 360px;
+}
+.brick2{
+    width: 70px;
+    position: absolute;
+    top: 300px;
+    left: 430px;
+}
+.brick3{
+    width: 70px;
+    position: absolute;
+    top: 300px;
+    left: 500px;
+
+}
+.brick4{
+    width: 70px;
+    position: absolute;
+    top: 300px;
+    left: 570px;
+
+}
+/* //블럭 */
+
+/* 로고 및 선택 */
+.select{
+    display: inline-block;
+    width: 500px;
+    vertical-align: middle;
+    
+}
+.select img{
+    margin-bottom: 30px;
+}
+.select a{
+    display: block;
+    font-size: 35px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    width: 330px;
+    margin-left: 65px;
+}
+.select a::before{
+    content: '> ';
+    opacity: 0;
+    
+    transition: all 0.1s ease-in;
+}
+.select a:hover::before{
+    opacity: 1;
+    transition: all 0.1s ease-in;
+}
+.helper{
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+/* //로고 및 선택 */
+
+
+
+/* 상단 텍스트 */
+.text{
+    position: absolute;
+    width: 100%;
+    margin-top: 20px;
+}
+.text .no{
+    float: left;
+    width: 10%;
+}
+.text .span1{
+    float: left;
+    width: 20%;
+    font-size: 30px;
+    text-align: left;
+    
+    
+}
+.text .coin{
+    float: left;
+    width: 20%;
+    text-align: left;
+    font-size: 30px;
+    margin-top: 5px;
+}
+.coin img{
+    display: inline-block;
+    vertical-align: middle;
+}
+.coin span{
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 8px;
+}
+.text .span2{
+    float: left;
+    margin-left: 10%;
+    width: 10%; 
+    font-size: 30px;
+    text-align: center;
+}
+.text .span3{
+    float: left;
+    width: 20%; 
+    font-size: 30px;
+    text-align: right;
+}
+/* //상단 텍스트 */
+
+/* 애니메이션 */
+
+@-webkit-keyframes play{
+    100%{background-position: -284px;}
+}
+@keyframes play{
+    100%{background-position: -284px;}
+}
+@-webkit-keyframes wind{
+    from{left:-120px;}
+    to{left:90%;}
+}
+@keyframes wind{
+    from{left: -120px;}
+    to{left: 90%;}
+}
+
+@-webkit-keyframes run{
+    from{left: -200px;}
+    to{left: 90%;}
+}
+@keyframes run{
+    from{left: -200px;}
+    to{left: 78%;}
+}
+/* //애니메이션 */
+
+    </style>
+</head>
+<body>
+   <audio src="https://vgmsite.com/soundtracks/super-mario-bros/khbnvkqp/01%20-%20Super%20Mario%20Bros.mp3" autoplay loop></audio>
+    <div class="sky">
+        <div class="text">
+                <span class="no"> &nbsp;</span>
+                <span class="span1">MARIO <br> 00378</span>
+                <div class="coin">
+                    <img src="https://i.postimg.cc/0y4LDL9G/pngwing-com-20.png" alt="스타"width="45px">  
+                    <span > X 3</span>
+                </div>
+                <span class="span2" >WORLD <br> 3-2</span>
+                <span class="span3">TIME <br> 027 </span>
+                <span class="no"> &nbsp;</span> 
+        </div>
+        <div class="helper"></div><div class="select">
+                <img src="https://i.postimg.cc/yd4trcgk/Mario-Series-Logo-svg.png" alt="마리오로고" width="100%">
+                <a href="#">1&nbsp;&nbsp; PLAYER&nbsp;&nbsp;GAME</a>
+                <a href="#">2&nbsp;&nbsp; PLAYER&nbsp;&nbsp;GAME</a>
+            </div>
+        <img src="https://i.postimg.cc/9fRHkcLN/Bush-Double.gif" alt="bush" class="bush2">
+        <img src="https://i.postimg.cc/KY6hSCVc/Bush-Single.gif" alt="bush" class="bush1">
+        <img src="https://i.postimg.cc/C54385Kd/Cloud-Single.gif" alt="cloud" class="cloud">
+        <div class="mario"></div>
+        <img src="https://i.postimg.cc/Rh9rqK4j/castle.png" alt="성" class="castle">
+        <div class="block">
+        <img src="https://i.postimg.cc/YCyw8vzW/Bricks.gif" alt="블럭" class="brick">
+        <img src="https://i.postimg.cc/YCyw8vzW/Bricks.gif" alt="블럭" class="brick2">
+        <img src="https://i.postimg.cc/52yhHxWN/Question-Block.gif" alt="물음표블럭" class="brick3">
+        <img src="https://i.postimg.cc/YCyw8vzW/Bricks.gif" alt="블럭" class="brick4">
+        <img src="https://i.postimg.cc/Wb5RbdKH/pipe.png" alt="파이프" class="pipe">
+         </div>
+    </div>
+        <div class="bottom">
+    </div>
+</body>
+</html>
